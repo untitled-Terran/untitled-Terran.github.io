@@ -282,7 +282,6 @@ th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
 /* --- Videography Page Gallery Styles --- */
 .video-grid {
     display: flex;
-    /* flex-wrap: wrap; <-- REMOVED this to keep items on one line */
     justify-content: center;
     gap: 30px;
     margin: 40px 0;
@@ -293,6 +292,6 @@ th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
     box-sizing: border-box;
     flex-basis: calc((100% - 60px) / 3);
     aspect-ratio: 16 / 9;
-    padding: 15px; /* ADDED this to create the frame/matting effect */
-    background-color: #fff; /* ADDED this for the white matting color */
+    padding: 15px;
+    background-color: #fff;
 }
