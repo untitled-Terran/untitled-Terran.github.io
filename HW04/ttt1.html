@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Part 1</title>
+    <style>
+        /* ///////////////////////////////////// */
+        /* General Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #DEB887;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Navigation Header Styles */
+        .nav-header {
+            background-color: #333;
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
+            color: white;
+            background-color: #555;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #777;
+        }
+
+        .nav-buttons a.active {
+            background-color: #00008B;
+            cursor: default;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Main Content Styles */
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* ///////////////////////////////////// */
+        /* Board Styles */
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 330px;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Square Styles */
+        .square {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 72px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ADD8E6;
+            color: #000;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Hover Effect */
+        .square:hover {
+            background-color: #00008B;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <nav class="nav-buttons">
+            <a href="ttt1.html" class="active">Part 1</a>
+            <a href="ttt2.html">Part 2</a>
+            <a href="ttt3.html">Part 3</a>
+            <a href="ttt4.html">Part 4</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="board">
+            <div class="square">X</div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square">O</div>
+            <div class="square">X</div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+    </main>
+
+</body>
+</html>

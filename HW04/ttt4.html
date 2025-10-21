@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Part 4</title>
+    <style>
+        /* ///////////////////////////////////// */
+        /* General Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #DEB887;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* ///////////////////////////////////// */
+        /* Navigation Header Styles */
+        .nav-header {
+            background-color: #333;
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
+            color: white;
+            background-color: #555;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #777;
+        }
+
+        .nav-buttons a.active {
+            background-color: #00008B;
+            cursor: default;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Main Content Styles */
+        main {
+            text-align: center;
+            padding: 0 20px 20px 20px;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Info Area Styles */
+        #turn-info, #win-info {
+            border: 1px solid #999;
+            padding: 10px;
+            width: 318px;
+            margin-bottom: 10px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        #win-info {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Board Styles */
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 330px;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Square Styles */
+        .square {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 72px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #ADD8E6;
+            color: #000;
+        }
+
+        /* ///////////////////////////////////// */
+        /* Hover Effect */
+        .square:hover {
+            background-color: #00008B;
+            color: #fff;
+        }
+        
+        /* ///////////////////////////////////// */
+        /* Button Styles */
+        #start-btn {
+            display: inline-block;
+            background-color: #5cb85c;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #start-btn:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="nav-header">
+        <nav class="nav-buttons">
+            <a href="ttt1.html">Part 1</a>
+            <a href="ttt2.html">Part 2</a>
+            <a href="ttt3.html">Part 3</a>
+            <a href="ttt4.html" class="active">Part 4</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Tic Tac Toe!</h1>
+        <div id="turn-info"></div>
+        
+        <div id="board">
+            <script>
+                /////////////////////////////////////
+                // Generate Board
+                const NUM_SQUARES = 9;
+                for (let i = 0; i < NUM_SQUARES; i++) {
+                    let id = "sq" + i;
+                    document.write("<div class='square' id='" + id + "'></div>");
+                }
+            </script>
+        </div>
+
+        <div id="win-info"></div>
+        <button id="start-btn">Start Game</button>
+    </main>
+
+    <script>
+        /////////////////////////////////////
+        // Game Logic
+        let currentPlayer;
+        let gameOver = false;
+        const squares = document.querySelectorAll('.square');
+        const turnInfo = document.getElementById('turn-info');
+        const winInfo = document.getElementById('win-info');
+        const startButton = document.getElementById('start-btn');
+
+        /*
+        startGame()
+        Clears the board, chooses a random starting player, and resets the game state.
+        */
+        function startGame() {
+            squares.forEach(square => {
+                square.innerHTML = '';
+            });
+            winInfo.innerHTML = '';
+            gameOver = false;
+            
+            currentPlayer = Math.random() < 0.5 ? 'X' : 'O';
+            turnInfo.innerHTML = `It's ${currentPlayer}'s turn`;
+        }
+
+        /*
+        handleSquareClick(event)
+        Manages the logic when a square is clicked.
+        */
+        function handleSquareClick(event) {
+            const clickedSquare = event.target;
+
+            if (gameOver || clickedSquare.innerHTML !== '') {
+                return; 
+            }
+            
+            clickedSquare.innerHTML = currentPlayer;
+            
+            if (checkForWin()) {
+                winInfo.innerHTML = `${currentPlayer} is the winner!`;
+                turnInfo.innerHTML = 'Game Over';
+                gameOver = true;
+            } else if (checkForStalemate()) {
+                winInfo.innerHTML = `It's a stalemate!`;
+                turnInfo.innerHTML = 'Game Over';
+                gameOver = true;
+            } else {
+                currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
+                turnInfo.innerHTML = `It's ${currentPlayer}'s turn`;
+            }
+        }
+
+        /*
+        checkForWin()
+        Checks for a winning condition on the board.
+        @returns {boolean} - True if a winner is found, false otherwise.
+        */
+        function checkForWin() {
+            let moves = [];
+            squares.forEach(square => {
+                moves.push(square.innerHTML || '-');
+            });
+
+            const winConditions = [
+                moves[0] + moves[1] + moves[2], // Row 1
+                moves[3] + moves[4] + moves[5], // Row 2
+                moves[6] + moves[7] + moves[8], // Row 3
+                moves[0] + moves[3] + moves[6], // Column 1
+                moves[1] + moves[4] + moves[7], // Column 2
+                moves[2] + moves[5] + moves[8], // Column 3
+                moves[0] + moves[4] + moves[8], // Diagonal 1
+                moves[2] + moves[4] + moves[6]  // Diagonal 2
+            ];
+
+            for (let condition of winConditions) {
+                if (condition === 'XXX' || condition === 'OOO') {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /*
+        checkForStalemate()
+        Checks if the board is full with no winner.
+        @returns {boolean} - True if a stalemate is found, false otherwise.
+        */
+        function checkForStalemate() {
+            let moves = [];
+            squares.forEach(square => {
+                moves.push(square.innerHTML || '-');
+            });
+            return !moves.includes('-');
+        }
+
+        /////////////////////////////////////
+        // Event Listeners
+        squares.forEach(square => {
+            square.addEventListener('click', handleSquareClick);
+        });
+
+        startButton.addEventListener('click', startGame);
+
+        /////////////////////////////////////
+        // Initial Game Start
+        startGame();
+
+    </script>
+
+</body>
+</html>
