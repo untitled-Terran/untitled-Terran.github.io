@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Problem 1: Animal Flashcards</title>
+  <meta charset="UTF-8" />
+  
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin: 5px; padding: 10px 15px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  
+  <div id="myapp"></div>
+
+  <script type="text/babel">
+
+    function AnimalButton(props) {
+      const { name, sound } = props;
+
+      const showSound = () => {
+        alert(`The ${name.toLowerCase()} says ${sound}`);
+      };
+
+      return (
+        <button onClick={showSound}>
+          {name}
+        </button>
+      );
+    }
+
+    function App() {
+      const animals = [
+        { name: "Dragon", sound: "burn" },
+        { name: "Cat", sound: "meow" },
+        { name: "Cow", sound: "moo" },
+        { name: "Duck", sound: "quack" }
+      ];
+
+      return (
+        <div>
+          <h1>Animal Flashcards</h1>
+          
+          {animals.map((animal, index) => (
+            <AnimalButton
+              key={index}
+              name={animal.name}
+              sound={animal.sound}
+            />
+          ))}
+        </div>
+      );
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('myapp')
+    );
+
+  </script>
+</body>
+</html>
