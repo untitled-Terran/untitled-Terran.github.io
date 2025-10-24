@@ -10,15 +10,20 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
 
+    <style>
+
+    </style>
+
     <script language="javascript">
-        function Member(image, text) {
+        function Member(name, image, text) {
+            this.name = name;
             this.image = image;
             this.text = text;
         }
 
-        images = [new Member("logo.png", "1 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT"),
-            new Member("ghost.png", "2 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT"),
-            new Member("marshmallow.png", "3 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT")];
+        images = [new Member("Inky", "logo.png", "1 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT"),
+            new Member("Blinky", "ghost.png", "2 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT"),
+            new Member("Pinky", "marshmallow.png", "3 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT")];
         var image_index = 0;
 
         $(document).ready (function() {
@@ -39,16 +44,17 @@
             });
 
             function moveSlides() {
-                $("#slide img, #slide p").fadeOut(1000, function() {
+                $("#slide h2, #slide img, #slide p").fadeOut(1000, function() {
+                    $("#slide h2").text(images[image_index].name);
                     $("#slide img").attr("src", "bin/"+images[image_index].image);
                     $("#slide p").text(images[image_index].text);
-                    $("#slide img, #slide p").fadeIn(1000);
+                    $("#slide h2, #slide img, #slide p").fadeIn(1000);
                 })
 	        };
         });
     </script>
 </head>
-<body>
+<body style="background-color: #000928">
 
     <header>
         <div class="header-logo">
@@ -85,7 +91,8 @@
 
     <div id="slides-wrapper">
         <div id="slide" style="text-align: center">
-            <img src="bin/logo.png" style="display: block; margin: 0 auto; height: 300px; margin-top: 20px">
+            <h2 style="display: inline-block; text-align: center; width: 60%; max-width: 800px; height: auto; margin-top: 20px; color: #5dbe42; font-size: 30px; margin-top: 40px; text-decoration: underline">Inky</h2>
+            <img src="bin/logo.png" style="display: block; margin: 0 auto; height: 275px;">
             <p style="display: inline-block; text-align: center; width: 60%; max-width: 800px; height: auto; margin-top: 20px; background-color: #434967; color: #7fd667; font-size: 18px; padding: 10px">1 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT</p>
         </div>
     </div>
