@@ -1,3 +1,5 @@
+/* Keeping this here just in case something goes terribly wrong :) */
+
 /* --- Global & Header --- */
 body {
     margin: 0;
@@ -8,13 +10,11 @@ body {
 header {
     background-color: #373c55;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between; 
     align-items: center;
     padding: 10px 20px;
-    max-height: 120px;
+    height: 100px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 /* Column 1: Logo */
@@ -25,9 +25,8 @@ header {
 
 /* Column 2: Title */
 .header-title img {
-    height: 80px;
-    max-height: 80px;
-    width: auto;
+    height: 200px;
+    display: block;
 }
 
 /* Column 3: Contact */
@@ -45,36 +44,27 @@ header {
     color: #fff;
 }
 
-/* WORK IN PROGRESS, TAKING A BREAK */
-@media (max-width: 800px) {
-
-}
-
 
 /* --- Navigation Bar --- */
 nav {
     background-color: #434967;
-    height: auto;
+    height: 45px;
     text-align: center;
-    padding: 10px 0;
+    padding-top: 10px;
     box-sizing: border-box;
     border-top: 1px solid #000;
 }
 
 nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    list-style: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    flex: 1 1 auto;
-    min-width: 100px;
-    max-width: 200px;
+    display: inline-block;
+    width: 10%;
+    min-width: 100px; 
 }
 
 nav ul li a {
