@@ -46,7 +46,7 @@ header {
 }
 
 /* When screen size is too small, changes layout to top-to-bottom */
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
     header {
         flex-direction: column;
         align-items: center;
