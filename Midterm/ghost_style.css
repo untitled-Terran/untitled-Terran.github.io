@@ -45,9 +45,28 @@ header {
     color: #fff;
 }
 
-/* WORK IN PROGRESS, TAKING A BREAK */
-@media (max-width: 800px) {
+/* When screen size is too small, changes layout to top-to-bottom*/
+@media (max-width: 950px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-height: none;
+    }
 
+    .header-logo img {
+        height: 70px;
+    }
+
+    .header-title img {
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    .header-contact {
+        font-size: 16px;
+        margin-top: 10px;
+    }
 }
 
 
