@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghostbusters: Contact</title>
+  <link rel="stylesheet" href="ghost_style.css">
+  <style>
+    .flex-containertop {
+        background-color: hsla(0, 0%, 100%, 0);
+        text-align:left;
+        line-height: 25px;
+    }
+  </style>
+</head>
+<script>
+window.onload = function() {
+    //defining vars 
+  var firstname = document.getElementById("firstname");
+  var lastname = document.getElementById("lastname");
+  var phonenum = document.getElementById("phonenum");
+  var email = document.getElementById("email");
+  var description = document.getElementById("description");
+
+  var jsonBtn = document.getElementById("jsonbtn");
+  var jsonText = document.getElementById("jsontext");
+  //response array components 
+  var responses= [];
+  var respNum= 0;
+
+  jsonBtn.addEventListener("click", function() {
+    //first checks if any text boxes are empty
+    if ((((firstname.value=="") || (lastname.value=="")) ||
+    ((phonenum.value=="") || (email.value==""))) ||
+    (description.value==""))
+    {
+        //requests a redo sumbission
+        alert("Please sumbit complete and proper information so we may reach you. Thanks!");
+        console.log("incorrect submission");
+    } else {
+        //stores proper sumbission in array
+      var data = {
+          "firstName": firstname.value,
+          "lastName": lastname.value,
+          "phoneNum": phonenum.value,
+          "email": email.value,
+          "description": description.value
+      };
+
+      //the only issue is this stores the data during a single onload not forever...
+      var submission = JSON.stringify(data);
+      jsonText.innerHTML = submission;
+      responses += [respNum++,submission];
+      console.log(responses);
+    }
+  });
+};
+
+</script>
+
+<body style="background-color: #202331;">
+
+<!-- HEADER -->
+    <header>
+        <div class="header-logo">
+            <a href = "ghost_home.html">
+                <img src="bin/logo.png" alt="Ghostbusters Logo">
+            </a>
+        </div>
+        <div class="header-title">
+            <img src="bin/Ghostbusters-title.png" alt="Ghostbusters Title">
+        </div>
+        <div class="header-contact">
+            <p>Who you gonna call?</p>
+            <p class="phone-number">(555) 236-8888</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href='ghost_home.html'>Home</a></li>
+            <li><a href='ghost_services.html'>Services</a></li>
+            <li><a href='ghost_mission.html'>Our Mission</a></li>
+            <li><a href='ghost_team.html'>Our Team</a></li>
+            <li><a href='ghost_testimonials.html'>Testimonials</a></li>
+            <li><a href='ghost_contact.html' class="active">Contact</a></li>
+            <li><a href='ghost_locations.html'>Locations</a></li>
+            
+            </ul>
+    </nav>
+
+    
+    <!-- PAGE CONTENT-->
+
+<div class="flex-containertop" style="margin:50px;">
+    <label style="color:whitesmoke">First Name:</label>
+    <input id="firstname" type="text">
+    <br>
+
+    <label style="color:whitesmoke">Last Name:</label>
+    <input id="lastname" type="text">
+    <br>
+
+    <label style="color:whitesmoke">Phone Number:</label>
+    <input id="phonenum" type="text">
+    <br>
+
+    <label style="color:whitesmoke">Email Address:</label>
+    <input id="email" type="text">
+    <br>
+
+    <label style="color:whitesmoke">Describe your hauntings:</label>
+    <input id="description" type="text">
+    <br>
+
+    <button id="jsonbtn">Submit</button>
+    <p id="jsontext" style="color: rgb(240, 11, 11);"></p>
+
+</div>
+
+
+
+    <!-- FIXED ELEMENTS : BOTTOM-->
+
+  <div class="footer">
+    <p>GhostBusters</p>
+  </div>
+
+</body>
+</html>
