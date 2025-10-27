@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
   <title>Ghostbusters: Contact</title>
   <link rel="stylesheet" href="ghost_style.css">
   <style>
@@ -16,6 +17,11 @@
 <script>
 window.onload = function() {
     //defining vars 
+=======
+</head>
+<script>
+window.onload = function() {
+>>>>>>> Stashed changes
   var firstname = document.getElementById("firstname");
   var lastname = document.getElementById("lastname");
   var phonenum = document.getElementById("phonenum");
@@ -24,21 +30,34 @@ window.onload = function() {
 
   var jsonBtn = document.getElementById("jsonbtn");
   var jsonText = document.getElementById("jsontext");
+<<<<<<< Updated upstream
   //response array components 
+=======
+>>>>>>> Stashed changes
   var responses= [];
   var respNum= 0;
 
   jsonBtn.addEventListener("click", function() {
+<<<<<<< Updated upstream
     //first checks if any text boxes are empty
+=======
+>>>>>>> Stashed changes
     if ((((firstname.value=="") || (lastname.value=="")) ||
     ((phonenum.value=="") || (email.value==""))) ||
     (description.value==""))
     {
+<<<<<<< Updated upstream
         //requests a redo sumbission
         alert("Please sumbit complete and proper information so we may reach you. Thanks!");
         console.log("incorrect submission");
     } else {
         //stores proper sumbission in array
+=======
+        alert("Please sumbit complete and proper information so we may reach you. Thanks!");
+        console.log("incorrect submission");
+    } else {
+
+>>>>>>> Stashed changes
       var data = {
           "firstName": firstname.value,
           "lastName": lastname.value,
@@ -46,11 +65,19 @@ window.onload = function() {
           "email": email.value,
           "description": description.value
       };
+<<<<<<< Updated upstream
 
       //the only issue is this stores the data during a single onload not forever...
       var submission = JSON.stringify(data);
       jsonText.innerHTML = submission;
       responses += [respNum++,submission];
+=======
+      //the only issue is this stores the data during a single onload not forever...
+      var submission = JSON.stringify(data);
+      jsonText.innerHTML = submission;
+      respNum++;
+      responses += [respNum,submission];
+>>>>>>> Stashed changes
       console.log(responses);
     }
   });
@@ -58,6 +85,7 @@ window.onload = function() {
 
 </script>
 
+<<<<<<< Updated upstream
 <body style="background-color: #202331;">
 
 <!-- HEADER -->
@@ -125,6 +153,34 @@ window.onload = function() {
   <div class="footer">
     <p>GhostBusters</p>
   </div>
+=======
+<body>
+
+<label style="color:rgb(57, 57, 57)">First Name:</label>
+<input id="firstname" type="text">
+<br>
+
+<label style="color:rgb(30, 29, 29)">Last Name:</label>
+<input id="lastname" type="text">
+<br>
+
+<label style="color:rgb(30, 29, 29)">Phone Number:</label>
+<input id="phonenum" type="text">
+<br>
+
+<label style="color:rgb(30, 29, 29)">Email Address:</label>
+<input id="email" type="text">
+<br>
+
+<label style="color:rgb(30, 29, 29)">Describe your hauntings:</label>
+<input id="description" type="text">
+<br>
+
+
+<button id="jsonbtn">Submit</button>
+<p id="jsontext" style="color: rgb(240, 11, 11);"></p>
+
+>>>>>>> Stashed changes
 
 </body>
 </html>

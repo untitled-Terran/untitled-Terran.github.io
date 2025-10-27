@@ -50,7 +50,10 @@
     }
   </style>
 </head>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 <script>
 window.onload = function() {
     //defining vars 
@@ -73,8 +76,12 @@ window.onload = function() {
     (description.value==""))
     {
         //requests a redo sumbission
+<<<<<<< Updated upstream
         //alert("Please sumbit complete and proper information so we may reach you. Thanks!");
         jsonText.innerHTML = "Please sumbit complete and proper information so we may reach you. Thanks";
+=======
+        alert("Please sumbit complete and proper information so we may reach you. Thanks!");
+>>>>>>> Stashed changes
         console.log("incorrect submission");
     } else {
         //stores proper sumbission in array
@@ -88,7 +95,11 @@ window.onload = function() {
 
       //the only issue is this stores the data during a single onload not forever...
       var submission = JSON.stringify(data);
+<<<<<<< Updated upstream
       jsonText.innerHTML = "Your Response has been recorded. Our team will contact you shortly with a complete evaluation. Thank you!";
+=======
+      jsonText.innerHTML = submission;
+>>>>>>> Stashed changes
       responses += [respNum++,submission];
       console.log(responses);
     }
@@ -99,6 +110,7 @@ window.onload = function() {
 
 <body style="background-color: #202331;">
 
+<!-- HEADER -->
     <header>
         <div class="header-logo">
             <a href = "ghost_home.html">
@@ -126,12 +138,12 @@ window.onload = function() {
             
             </ul>
     </nav>
- 
+
     
     <!-- PAGE CONTENT-->
 
-<h1 style="display: block; width: 100%; text-align: center; font-size: 40px; color: #50a539;">Contact an Expert</h1>
 
+<<<<<<< Updated upstream
   
 <div class="flex-containertop">
 
@@ -174,6 +186,30 @@ window.onload = function() {
 
 
 
+=======
+<label style="color:whitesmoke">First Name:</label>
+<input id="firstname" type="text">
+<br>
+
+<label style="color:whitesmoke">Last Name:</label>
+<input id="lastname" type="text">
+<br>
+
+<label style="color:whitesmoke">Phone Number:</label>
+<input id="phonenum" type="text">
+<br>
+
+<label style="color:whitesmoke">Email Address:</label>
+<input id="email" type="text">
+<br>
+
+<label style="color:whitesmoke">Describe your hauntings:</label>
+<input id="description" type="text">
+<br>
+
+<button id="jsonbtn">Submit</button>
+<p id="jsontext" style="color: rgb(240, 11, 11);"></p>
+>>>>>>> Stashed changes
 
 
 
@@ -206,6 +242,5 @@ window.onload = function() {
       </div>
   </footer>
 
-  
 </body>
 </html>
