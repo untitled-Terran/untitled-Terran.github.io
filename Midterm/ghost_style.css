@@ -118,3 +118,115 @@ nav ul li a.active {
     color: #249528;
     font-weight: bold;
 }
+
+
+
+
+/* Footer */
+
+footer {
+    background-color: #181a25;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+/* Column 1: Logo */
+.footer-logo img {
+    height: 70px;
+    width: auto;
+}
+
+/* Column 2: Title */
+.footer-title h3 {
+    font-size: 30px;
+    margin: 0;
+    font-family: Georgia;
+    color: #7fd667;
+}
+
+.footer-title p {
+    margin: 4px 0;
+    color: #FFF;
+    font-size: 20px;
+}
+
+/* Column 3: Address */
+.footer-address {
+    color: #7fd667;
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    margin-right: 5px;
+    height: auto;
+    box-sizing: border-box;
+}
+.footer-address p {
+    margin: 4px 0; 
+}
+.footer-address .address {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Column 4: Hours */
+.footer-hours {
+    color: #7fd667;
+    font-size: 18px;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.footer-hours p {
+    margin: 4px 0; 
+}
+
+.footer-hours .hours {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+@media (max-width: 850px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-height: none;
+    }
+
+    .footer-left {
+        margin-bottom: 20px;
+    }
+
+    .footer-logo img {
+        height: 70px;
+    }
+
+    .header-address {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .header-hours {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
