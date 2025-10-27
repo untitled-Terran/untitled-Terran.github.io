@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+        body {
+          background-color: #202331;
+        }
+
+        #service_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        
         .btn {
             background-color: #12111c;
             color: #85f1a2
@@ -18,10 +28,11 @@
             text-align:center;
             line-height: 25px;
         }
-        .flex-containertop {
+        /* .flex-containertop {
             display: flex;
             max-width: 80%;
-            text-align: center;
+            justify-content: center;
+            align-items: center;
         }
 
         .flex-containertop > div {
@@ -32,10 +43,25 @@
             line-height: 20px;
             font-size: 15px;
             padding: 10px; 
-            /*{font-size: 50px; padding: 10px; margin: 10px;} */
+        } */
+
+        .flex-containertop {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #434967;
+          color: whitesmoke;
+          text-align: left;
+          line-height: 20px;
+          font-size: 15px;
+          padding: 10px;
+          margin: 20px auto;
+          width: 80%;
+          max-width: 900px;
+          border-radius: 10px;
         }
 
-        .item-1 {
+        /* .item-1 {
             flex: 1 1 20px;
         }
 
@@ -45,7 +71,25 @@
 
         .item-3 {
             flex: 0.5 1 20px;
+        } */
+
+        .item-1 {
+          flex: 1;
+          display: flex;
+          justify-content: center;
         }
+
+        .item-2 {
+          flex: 3;
+          padding: 0 20px;
+        }
+
+        .item-3 {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+        }
+
         .serviceTitles{
             font-size: 40px;
             line-height: 45px;
@@ -58,7 +102,7 @@
 
 </head>
 
-<body style="background-color: #202331;">
+<body>
 
     <header>
         <div class="header-logo">
@@ -97,7 +141,9 @@
     </div>
 
     <!-- service 1 -->
-    <div class="flex-containertop" style="margin:50px;">
+     <div id="service_container">
+
+    <div class="flex-containertop" style="margin-top: 40px">
       <div class="item-1">
          <img src="bin/logo.png" alt="front" style="max-width: 200px; width: 80%; min-width:100px; flex-shrink: 1;  " ALIGN="left">
       </div>
@@ -108,13 +154,13 @@
       </div>
 
       <div class="item-3">
-         <div>Cost <br> $$$<br> </div>
+         <div style="font-size: 30px;">Cost <br><br> $$$<br> </div>
       </div>
     </div>
 
 
     <!-- service 2  image to right-->
-    <div class="flex-containertop" style="margin:50px;">
+    <div class="flex-containertop">
       <div class="item-1">
          <img src="bin/logo.png" alt="front" style="max-width: 200px; width: 80%; min-width:100px; flex-shrink: 1;  " ALIGN="left">
       </div>
@@ -125,12 +171,12 @@
       </div>
 
       <div class="item-3">
-         <div>Cost <br><br> </div>
+         <div style="font-size: 30px;">Cost <br><br> </div>
       </div>
     </div>
 
     <!-- service 3  image to right-->
-    <div class="flex-containertop" style="margin:50px;">
+    <div class="flex-containertop">
       <div class="item-1">
          <img src="bin/logo.png" alt="front" style="max-width: 200px; width: 80%; min-width:100px; flex-shrink: 1;  " ALIGN="left">
       </div>
@@ -141,8 +187,9 @@
       </div>
 
       <div class="item-3">
-         <div>Cost <br><br> </div>
+         <div style="font-size: 30px;">Cost <br><br> </div>
       </div>
+    </div>
     </div>
 
     <!-- Bottom Quote-->
@@ -180,10 +227,6 @@
           </div>
       </div>
   </footer>
-    
-
-    
-
 
 </body>
 </html>
