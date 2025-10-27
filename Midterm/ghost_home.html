@@ -7,11 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        #background-img {
-            background-image: url("bin/teamwork.png");
+        /* #background-img {
+            background-image: url("bin/teamwork.png") center / cover no-repeat;
             width: 100%;
             height: 500px;
             border: 1px solid #000;
+        } */
+        .box {
+            background-color: #181a25;
+            display: inline-block;
+            text-align: center;
+            padding: 15px 30px;
+            border: 1px solid #000;
+            width: 80%;
+            margin: 0 
+        }
+
+        .block-left {
+            display: inline-block;
+            text-align: left;
+            width: 20%;
+            border: 1px solid #FFF;
+        }
+
+        .block-right {
+            display: inline-block;
+            text-align: right;
+            border: 1px solid #FFF;
+            width: 20%;
+        }
+
+        .box p {
+            width: 80%;
+        }
+
+        .box img {
+            width: 20%;
+            max-width: 400px;
+            height: auto;
         }
     </style>
 </head>
@@ -44,12 +77,30 @@
         </ul>
     </nav>
 
-
+    <!-- Title -->
     <h1 style="display: block; width: 100%; text-align: center; font-size: 40px; color: #50a539;"> Home</h1>
 
-    <div id="background-img"></div>
+    <!-- Background image at top (fail) -->
+    <!-- <div id="background-img"></div> -->
+
+
+    <!-- Info boxes -->
+    <div style="text-align: center">
+        <div class="box" id="box1">
+            <div class="block-left" style="">
+                <p>Hey hey hey! What's up? I'm just chillin in the home page</p>
+            </div>
+            <div class="block-right">
+                <img src="bin/logo.png" alt="block1 pic">
+            </div>
+        </div>
+
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+    </div>
 
     
+    <!-- Footer -->
     <footer>
         <div class="footer-left">
             <div class="footer-logo">
