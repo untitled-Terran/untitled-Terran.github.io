@@ -5,6 +5,16 @@ body {
     background-color: #f0f0f0; 
 }
 
+h1 {
+    color: #249528;
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    font-size: 40px;
+    z-index: 10;
+    position: relative
+}
+
 header {
     background-color: #373c55;
     display: flex;
