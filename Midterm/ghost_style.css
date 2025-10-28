@@ -146,9 +146,17 @@ footer {
 .footer-logo img {
     height: 70px;
     width: auto;
+    opacity: 0.4;
+    z-index: 1;
 }
 
 /* Column 2: Title */
+.footer-title {
+    margin-left: -25px;
+    z-index: 1000;
+}
+
+
 .footer-title h3 {
     font-size: 30px;
     margin: 0;
@@ -218,6 +226,7 @@ footer {
 
     .footer-logo img {
         height: 70px;
+        opacity: 1.0;
     }
 
     .header-address {
