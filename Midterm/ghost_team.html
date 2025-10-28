@@ -11,9 +11,18 @@
         crossorigin="anonymous"></script>
 
     <style>
-        .btn {
+        /* .btn {
             background-color: #12111c;
             color: #85f1a2
+        } */
+
+        .btn {
+            display: inline-block;
+            background-color: #12111c;
+            color: #85f1a2;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
         }
 
         #slides-wrapper {
@@ -103,14 +112,14 @@
             <div id="slide" style="text-align: center;">
                 <h2 style="display: inline-block; text-align: center; width: 60%; max-width: 800px; height: auto; color: #5dbe42; font-size: 30px; margin-top: 15px;">Inky</h2>
                 <img src="bin/logo.png" style="display: block; margin: 0 auto; height: 275px;">
-                <p style="display: inline-block; text-align: center; width: 95%; max-width: 800px; height: auto; margin-top: 20px; background-color: #434967; color: #7fd667; font-size: 18px; padding: 10px">1 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT</p>
+                <p style="display: inline-block; text-align: center; width: 92%; max-width: 800px; height: auto; margin-top: 20px; background-color: #434967; color: #7fd667; font-size: 18px; padding: 10px">1 PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT PLACEHOLDER TEXT</p>
             </div>
         </div>
     </div>
 
     <div id="buttons" style="text-align: center; margin-top: 20px; margin-bottom: 50px;">
-        <input type="button" class = "btn" id="prevbtn" value = "<< Prev" style="display: inline-block;">
-        <input type="button" class = "btn" id="nextbtn" value = "Next >>" style="display: inline-block;">
+        <a class="btn" id="prevbtn"><< Prev</a>
+        <a class="btn" id="nextbtn">Next >></a>
     </div>
 
     <!-- Order Now Button -->
