@@ -16,20 +16,28 @@
 
         /* Background Image */
         .back-img {
-            background-image: url("bin/teamwork.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            width: 100%;
+            overflow: hidden;
+            opacity: 0.7;
+            z-index: 1;
+            margin-top: -100px;
+            position: absolute;
+        }
+
+        .back-img img {
             width: 100%;
             height: auto;
             object-fit: cover;
-            opacity: 0.5;
-            z-index: 1;
+            display: block;
+            z-index: 0;
         }
 
         /* Boxes */
         #boxes {
             padding-bottom: 60px;
+            /* margin-top: -300px; */
+            z-index: 10;
+            position: relative;
         }
 
         .box {
@@ -44,12 +52,14 @@
             margin: 30px auto;
             text-align: center;
             overflow: hidden;
+            z-index: 1000;
         }
 
         .box img {
             width: 25%;
             border-radius: 10px;
             object-fit: cover;
+            z-index: 999;
         }
 
         .box.right-img {
@@ -73,6 +83,7 @@
         .box-text {
             width: 55%;
             padding: 0 20px;
+            z-index: 999;
         }
 
         .box-text h2 {
@@ -122,6 +133,10 @@
             .box-text {
                 width: 95%;
             }
+
+            #boxes  {
+                /* margin-top: -100px; */
+            }
         }
 
     </style>
@@ -156,9 +171,11 @@
     </nav>
 
     <!-- Title -->
-    <h1 style="display: block; width: 100%; text-align: center; font-size: 40px; color: #50a539;">Home</h1>
+    <h1 style="display: block; width: 100%; text-align: center; font-size: 40px; color: #50a539; z-index: 10; position: relative">Home</h1>
 
-    <div class="back-img"></div>
+    <div class="back-img">
+        <img src="bin/teamwork.png">
+    </div>
    
     <!-- Info boxes -->
     <div id="boxes">
@@ -195,6 +212,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Order Now Button -->
+    <a href="ghost_contact.html" class="order-now">Order Now!</a>
 
     
     <!-- Footer -->
