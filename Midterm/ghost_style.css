@@ -119,43 +119,7 @@ nav ul li a.active {
     font-weight: bold;
 }
 
-/* --- Mission Page Gallery --- */
-.mission-gallery {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto 60px;
-}
 
-.gallery-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.gallery-item-mission {
-    background-color: #434967;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    flex-basis: 250px;
-    text-align: center;
-}
-
-.gallery-item-mission img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 2px solid #7fd667;
-}
-
-.gallery-item-mission .caption {
-    color: whitesmoke;
-    font-size: 1rem;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
 
 
 /* Footer */
