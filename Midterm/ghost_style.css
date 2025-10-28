@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; 
+    text-align: center;
 }
 
 h1 {
@@ -12,7 +13,7 @@ h1 {
     text-align: center;
     font-size: 40px;
     z-index: 10;
-    position: relative
+    position: relative;
 }
 
 header {
@@ -52,7 +53,7 @@ header {
 .header-contact .phone-number {
     font-size: 22px;
     font-weight: bold;
-    color: #fff;
+    color: #fff !important;
 }
 
 /* When screen size is too small, changes layout to top-to-bottom */
