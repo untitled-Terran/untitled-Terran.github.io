@@ -3,13 +3,12 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; 
-    text-align: center;
+    /* text-align: center; */
 }
 
 h1 {
     color: #249528;
-    display: inline-block;
-    width: 160px;
+    width: 250px;
     text-align: center;
     font-size: 40px;
     z-index: 10;
