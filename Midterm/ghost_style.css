@@ -211,6 +211,18 @@ footer {
     color: #fff;
 }
 
+.order-now {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #373c55;
+    color: #7fd667;
+    padding: 15px 25px;
+    text-decoration: none;
+    z-index: 999;
+    border-radius: 5px;
+}
+
 
 @media (max-width: 850px) {
     footer {
