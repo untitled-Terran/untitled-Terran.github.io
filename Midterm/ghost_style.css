@@ -215,12 +215,12 @@ footer {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    background-color: #373c55;
+    background-color: #000000;
     color: #7fd667;
     padding: 15px 25px;
     text-decoration: none;
-    z-index: 999;
-    border-radius: 5px;
+    z-index: 9999;
+    border-radius: 10px;
 }
 
 
