@@ -12,19 +12,24 @@
             padding-bottom: 60px;
         }
 
-        .box {
+        .box-container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            width: 100%;
-            max-width: 1130px;
+            align-items: stretch;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .block {
+            flex: 1 1 500px;
             background-color: #434967;
             border-radius: 10px;
             padding: 20px;
-            margin: 0px auto;
-            text-align: center;
-            overflow: hidden;
             color: whitesmoke;
+            text-align: left;
+            box-sizing: border-box;
         }
 
         .box-text {
@@ -48,6 +53,19 @@
             padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
+        }
+
+        @media(max-width: 1150px) {
+            .box-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .block {
+                width: 90%;
+                flex: none;
+                max-width: 600px;
+            }
         }
 
 
@@ -94,7 +112,7 @@
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
-        
+
         h1 {
             display: block;
             width: 100%
@@ -135,10 +153,18 @@
     <h1 style="display: block; width: 100%; text-align: center; font-size: 40px; color: #50a539;"> Our Mission</h1>
     
     <div id="boxes">
-        <div class="box">
-            <div class="box-text">
-                <h2>About Us</h2>
-                <p>Founded by a trio of university parapsychologists—Dr. Peter Venkman, Dr. Ray Stantz, and Dr. Egon Spengler—our company began in a decommissioned NYC firehouse after our more... traditional academic pursuits ended. We translated our research into practical, high-stakes pest control, designing the proton packs, ghost traps, and the crucial containment unit. Later joined by the invaluable Winston Zeddemore, our team has faced everything from Class-5 roaming vapors to interdimensional deities. Since our formation, we've successfully managed thousands of spectral eliminations, most notably containing the 1984 Gozerian cross-rip event and saving the city from its destructor. We re-emerged to battle the psychomagnotheric "mood slime" outbreak of 1989, harnessing the power of positive energy to defeat the tyrannical Vigo the Carpathian. From managing subterranean rivers of ooze to battling giant marshmallow men, our experience is unmatched, and we remain ready to believe you.</p>
+        <div class="box-container">
+            <div class="block about-box">
+                <div class="box-text">
+                    <h2>About Us</h2>
+                    <p>Founded by a trio of university parapsychologists—Dr. Peter Venkman, Dr. Ray Stantz, and Dr. Egon Spengler—our company began in a decommissioned NYC firehouse after our more... traditional academic pursuits ended. We translated our research into practical, high-stakes pest control, designing the proton packs, ghost traps, and the crucial containment unit. Later joined by the invaluable Winston Zeddemore, our team has faced everything from Class-5 roaming vapors to interdimensional deities.</p>
+                </div>
+            </div>
+            <div class="block accomplishment-box">
+                <div class="box-text">
+                    <h2>Our Accomplishments</h2>
+                    <p>Since our formation, we've successfully managed thousands of spectral eliminations, most notably containing the 1984 Gozerian cross-rip event and saving the city from its destructor. We re-emerged to battle the psychomagnotheric "mood slime" outbreak of 1989, harnessing the power of positive energy to defeat the tyrannical Vigo the Carpathian. From managing subterranean rivers of ooze to battling giant marshmallow men, our experience is unmatched, and we remain ready to believe you.</p>
+                </div>
             </div>
         </div>
     </div>
