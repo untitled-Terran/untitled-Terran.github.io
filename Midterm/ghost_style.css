@@ -21,6 +21,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between; 
     align-items: center;
+    width:100%;
     padding: 10px 20px;
     max-height: 120px;
     box-sizing: border-box;
@@ -33,9 +34,18 @@ header {
     display: block;
 }
 
+/* Prep for navdropdown */
+.header-logo2{
+    display:none;
+}
+.header-logo2 img{
+    display:none;
+}
+
+
 /* Column 2: Title */
 .header-title img {
-    height: 80px;
+    height: 6vw;
     max-height: 80px;
     width: auto;
 }
@@ -55,29 +65,99 @@ header {
     color: #fff !important;
 }
 
+@media (max-width:650px){
+.header-title img {
+    display:none;
+}   
+}
+
+/*prepping for navdropdown*/
+.header .navdropdown {
+    display:none;
+
+}
+
+.header .navdropdown ul {
+    display:none;
+
+}
+
+@media (max-width:650px){
+.header-title img {
+    display:none;
+}   
+
+.header-title {
+        display: none;
+    }
+
+}
+
+
 /* When screen size is too small, changes layout to top-to-bottom */
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
+
+    /* Hide full nav bar */
+    nav {
+        display: none;
+    }
+
+
     header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        text-align: center;
-        max-height: none;
     }
 
+    /* Hide title */
+    
+
+    /* Swap logos */
     .header-logo img {
+        display: none;
+    }
+    .header-logo2{
+        display:block;
+    }
+    .header-logo2 img {
+        display: block;
         height: 70px;
+        cursor: pointer;
+
     }
 
-    .header-title img {
-        height: 45px;
-        margin-top: 10px;
+    /* Dropdown container */
+    .navdropdown ul {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 90px;
+        background: #434967;
+        list-style: none;
+        padding: 10px;
+        border-radius: 6px;
+        width: 200px;
+        text-align: right;
+        border: 2px solid #000;
+        z-index: 100;
     }
 
-    .header-contact {
-        font-size: 16px;
-        margin-top: 10px;
+    .navdropdown ul li a {
+        display: block;
+        padding: 10px;
+        color: #7fd667;
+        text-decoration: none;
+        font-size: 18px;
+        
+    }
+
+    .navdropdown ul li a:hover {
+        background-color: #f92f2f;
+        color: #fff;
     }
 }
+
+
 
 
 /* --- Navigation Bar --- */
