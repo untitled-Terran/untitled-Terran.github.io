@@ -117,6 +117,18 @@
   </style>
 </head>
 <script>
+// for nav drop down
+        window.onload = function() {
+        const dropdownLogo = document.querySelector(".header-logo2 img");
+        const dropdownMenu = document.querySelector(".navdropdown ul");
+
+        dropdownLogo.addEventListener("click", () => {
+            dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+    };
+
+//for form
 window.onload = function() {
     //defining vars 
   var firstname = document.getElementById("firstname");
@@ -196,6 +208,22 @@ window.onload = function() {
             <p>Who you gonna call?</p>
             <p class="phone-number">(555) 236-8888</p>
         </div>
+        <div class="header-logo2">
+        <div class="navdropdown">
+          <img src="bin/logo.png" alt="Ghostbusters Logo" ALIGN="top"> 
+          
+            <ul>
+            <li><a href='ghost_home.html'>Home</a></li>
+            <li><a href='ghost_services.html'>Services</a></li>
+            <li><a href='ghost_mission.html'>Our Mission</a></li>
+            <li><a href='ghost_team.html' class="active">Our Team</a></li>
+            <li><a href='ghost_testimonials.html'>Testimonials</a></li>
+            <li><a href='ghost_contact.html' >Contact</a></li>
+            <li><a href='ghost_locations.html'>Locations</a></li>
+            
+            </ul>
+        </div> <!-- end nav dropdown -->
+        </div>
     </header>
 
     <nav>
@@ -203,15 +231,14 @@ window.onload = function() {
             <li><a href='ghost_home.html'>Home</a></li>
             <li><a href='ghost_services.html'>Services</a></li>
             <li><a href='ghost_mission.html'>Our Mission</a></li>
-            <li><a href='ghost_team.html'>Our Team</a></li>
+            <li><a href='ghost_team.html' class="active">Our Team</a></li>
             <li><a href='ghost_testimonials.html'>Testimonials</a></li>
-            <li><a href='ghost_contact.html' class="active">Contact</a></li>
+            <li><a href='ghost_contact.html' >Contact</a></li>
             <li><a href='ghost_locations.html'>Locations</a></li>
             
             </ul>
     </nav>
 
-    
     <!-- PAGE CONTENT-->
 
 <h1>Contact</h1>

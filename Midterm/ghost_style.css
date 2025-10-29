@@ -209,7 +209,10 @@ nav ul li a.active {
     font-weight: bold;
 }
 
-
+.navdropdown ul li a.active {
+    color: #249528;
+    font-weight: bold;
+}
 
 
 /* Footer */
