@@ -30,21 +30,21 @@
         flex: 1 1 auto;
         width:50%;
         margin: 10px;
-      }
+    }
 
     .item-1 {
-            flex: 1 1 20px;
-        }
+        flex: 1 1 20px;
+    }
 
     .item-2 {
-            flex: 2 1 50px; 
-        }
+        flex: 2 1 50px; 
+    }
 
     .subHeader{
         font-size: 40px;
         line-height: 45px;
         text-align: left;
-        }
+    }
 
     .btn {
         background-color: #12111c;
@@ -56,14 +56,53 @@
         width: 100%
     }
 
-    @media(max-width: 1150px) {
-      .flex-containerOptions {
+    input[type="radio"], input[type="checkbox"] {
+        accent-color: #85f1a2;
+        margin-right: 8px;
+    }
+
+    .option-container {
+        display: flex;
         flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .option-container h3 {
+        margin-bottom: 10px;
+        color: whitesmoke;
+        text-align: left;
+    }
+
+    .option-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 30px;
+    }
+
+    .option-list label {
+        display: flex;
         align-items: center;
-        text-align: center;
-        max-height: none;
-        width: auto;
-      }
+        color: whitesmoke;
+        cursor: pointer;
+    }
+
+    @media(max-width: 1150px) {
+        .flex-containerOptions {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-height: none;
+            width: auto;
+        }
+
+        .option-container {
+            align-items: center;
+        }
+
+        .option-list {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
   </style>
 </head>
@@ -86,10 +125,12 @@ window.onload = function() {
   var respNum= 0;
 
   jsonBtn.addEventListener("click", function() {
-    //first checks if any text boxes are empty
+    //first checks if any input fields are empty
+    var duration = document.querySelector('input[name="haunt-length"]:checked');
+
     if ((((firstname.value=="") || (lastname.value=="")) ||
     ((phonenum.value=="") || (email.value==""))) ||
-    (description.value==""))
+    (description.value=="") || (!duration))
     {
         //requests a redo sumbission
         //alert("Please sumbit complete and proper information so we may reach you. Thanks!");
@@ -97,12 +138,25 @@ window.onload = function() {
         console.log("incorrect submission");
     } else {
         //stores proper sumbission in array
-      var data = {
+      var duration = document.querySelector('input[name="haunt-length"]:checked')?.value;
+      var sounds = document.getElementById("sounds").checked;
+      var apparitions = document.getElementById("apparitions").checked;
+      var cold = document.getElementById("cold").checked;
+      var watched = document.getElementById("watched").checked;
+      var smells = document.getElementById("smells").checked;
+      
+        var data = {
           "firstName": firstname.value,
           "lastName": lastname.value,
           "phoneNum": phonenum.value,
           "email": email.value,
-          "description": description.value
+          "description": description.value,
+          "duration": duration,
+          "sounds": sounds,
+          "apparitions": apparitions,
+          "cold": cold,
+          "watched": watched,
+          "smells": smells
       };
 
       //the only issue is this stores the data during a single onload not forever...
@@ -155,6 +209,7 @@ window.onload = function() {
 <div class="flex-containertop">
 
     <h2 style="text-align:center; color:whitesmoke; line-height:30px !important ">Reach an Expert and Get your free Quote!</h2>
+    <h3 style="text-align:center; color:whitesmoke; line-height:20px !important ">Contact Info:</h3>
    <div class="flex-containerOptions">
         <div>
             <label style="color:whitesmoke">First Name:</label>
@@ -179,9 +234,30 @@ window.onload = function() {
         </div>
     </div>
 
+    <div class="option-container" style="color: whitesmoke;">
+        <h3 style="color: whitesmoke;">Duration of Haunting:</h3>
+        <div class="option-list">
+            <label><input type="radio" name="haunt-length" value="1week">1-2 Weeks</label>
+            <label><input type="radio" name="haunt-length" value="2week">2-4 Weeks</label>
+            <label><input type="radio" name="haunt-length" value="4week">4-6 Weeks</label>
+            <label><input type="radio" name="haunt-length" value="6+week">6+ Weeks</label>
+        </div>
+    </div>
+
+    <div class="option-container" style="color: whitesmoke;">
+        <h3 style="color: whitesmoke;">Haunting Symptoms:</h3>
+        <div class="option-list">
+            <label><input type="checkbox" id="sounds">Sounds</label>
+            <label><input type="checkbox" id="apparitions">Apparitions</label>
+            <label><input type="checkbox" id="cold">Sudden cold spells</label>
+            <label><input type="checkbox" id="watched">Feeling of being watched</label>
+            <label><input type="checkbox" id="smells">Strange smells</label>
+        </div>
+    </div>
+
     <h2 style="color:whitesmoke; margin-bottom:5px !important">Description: </h2> 
     <label style="color:whitesmoke"> 
-        Please include important information such as:<br> History of hauntings, Duration of hauntings, Manifestations and abilities (apperitions, sounds, residue telepathy, discomfort)
+        Please include important information such as:<br> History of hauntings, Specific duration of hauntings, Description of manifestations and abilities (apperitions, sounds, residue telepathy, discomfort)
     </label>
 
     <textarea id="description" type="text" style="resize: vertical; width: 100%; height: 100px; border: 2px solid black; background-color: rgba(250, 235, 215, 0.199);"></textarea>
