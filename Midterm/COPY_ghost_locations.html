@@ -56,16 +56,6 @@
             display: inline-block;
             text-align: left;
             margin-top: 0px;
-            padding-left: 0;
-            list-style-position: inside;
-        }
-
-        .hours-list {
-            display: inline-block;
-            text-align: left;
-            margin-top: 0px;
-            padding-left: 0;
-            list-style-position: inside;
         }
 
         .contact-btn {
@@ -115,8 +105,7 @@
     <div class="loc-container">
     <div class="loc" data-city="New York" data-address="177A Bleecker Street, New York, NY" 
     data-desc="The original Ghostbusters firehouse — fully restored and still humming with ectoplasmic energy!" data-img="bin/newyork.jpg"
-    data-accomplishments="Captured the Stay-Puft Marshmallow Man (1984); Reopened the Containment Unit Safely (1991); Cleared the New York Public Library Haunting"
-    data-hours="Weekdays: 9AM-3PM; Weekends: 10AM-3PM">
+    data-accomplishments="Captured the Stay-Puft Marshmallow Man (1984); Reopened the Containment Unit Safely (1991); Cleared the New York Public Library Haunting">
       <h2>⚲</h2>
       <h2>NYC</h2>
       <button class="btn">Show Details</button>
@@ -124,8 +113,7 @@
 
     <div class="loc" data-city="Boston" data-address="206 Washington St, Boston, MA" 
     data-desc="Serving New England’s most historic haunts with proton precision and a wicked good attitude." data-img="bin/boston.jpg"
-    data-accomplishments="Eliminated the Fenway Phantom (2012); Neutralized the Beacon Hill Apparition (2015); Installed the Northeast Ecto-Grid (2019)"
-    data-hours="Weekdays: 10AM-5PM; Weekends: 11AM-5PM">
+    data-accomplishments="Eliminated the Fenway Phantom (2012); Neutralized the Beacon Hill Apparition (2015); Installed the Northeast Ecto-Grid (2019)">
       <h2>⚲</h2>
       <h2>Boston</h2>
       <button class="btn">Show Details</button>
@@ -183,8 +171,6 @@
         const img = loc.dataset.img;
         const accomplishments = loc.dataset.accomplishments.split(';');
         const listHTML = accomplishments.map(a => "<li>" + a.trim() + "</li>").join('');
-        const hours = loc.dataset.hours.split(';');
-        const list2HTML = hours.map(a => "<li>" + a.trim() + "</li>").join('');
 
         //put content in box depending on button
         detailsBox.innerHTML = `
@@ -194,8 +180,6 @@
           <p>${desc}</p>
           <h3>Recent Accomplishments</h3>
           <ul class="accomp-list">${listHTML}</ul>
-          <h3>Hours</h3>
-          <ul class="hours-list">${list2HTML}</ul>
           <p></p>
           <button id="close-btn" class="btn">Close</button>
         `;
