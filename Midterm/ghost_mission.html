@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <title>Ghostbusters Mission</title>
     <link rel="stylesheet" type="text/css" href="ghost_style.css">
     <meta charset="UTF-8">
@@ -119,6 +122,17 @@
         }
     </style>
 
+    <script>
+        window.onload = function() {
+            $.get("mission.json", function(data) {
+                document.getElementById("ab-title").innerHTML = data["about-title"];
+                document.getElementById("ab-text").innerHTML = data["about-text"];
+                document.getElementById("acc-title").innerHTML = data["accomplishments-title"];
+                document.getElementById("acc-text").innerHTML = data["accomplishments-text"];
+            });
+        }
+    </script>
+
 </head>
 <body style="background-color: #202331;">
 
@@ -156,14 +170,14 @@
         <div class="box-container">
             <div class="block about-box">
                 <div class="box-text">
-                    <h2>About Us</h2>
-                    <p>Founded by a trio of university parapsychologists—Dr. Peter Venkman, Dr. Ray Stantz, and Dr. Egon Spengler—our company began in a decommissioned NYC firehouse after our more... traditional academic pursuits ended. We translated our research into practical, high-stakes pest control, designing the proton packs, ghost traps, and the crucial containment unit. Later joined by the invaluable Winston Zeddemore, our team has faced everything from Class-5 roaming vapors to interdimensional deities.</p>
+                    <h2 id="ab-title">About Us</h2>
+                    <p id="ab-text">Founded by a trio of university parapsychologists—Dr. Peter Venkman, Dr. Ray Stantz, and Dr. Egon Spengler—our company began in a decommissioned NYC firehouse after our more... traditional academic pursuits ended. We translated our research into practical, high-stakes pest control, designing the proton packs, ghost traps, and the crucial containment unit. Later joined by the invaluable Winston Zeddemore, our team has faced everything from Class-5 roaming vapors to interdimensional deities.</p>
                 </div>
             </div>
             <div class="block accomplishment-box">
                 <div class="box-text">
-                    <h2>Our Accomplishments</h2>
-                    <p>Since our formation, we've successfully managed thousands of spectral eliminations, most notably containing the 1984 Gozerian cross-rip event and saving the city from its destructor. We re-emerged to battle the psychomagnotheric "mood slime" outbreak of 1989, harnessing the power of positive energy to defeat the tyrannical Vigo the Carpathian. From managing subterranean rivers of ooze to battling giant marshmallow men, our experience is unmatched, and we remain ready to believe you.</p>
+                    <h2 id="acc-title">Our Accomplishments</h2>
+                    <p id="acc-text">Since our formation, we've successfully managed thousands of spectral eliminations, most notably containing the 1984 Gozerian cross-rip event and saving the city from its destructor. We re-emerged to battle the psychomagnotheric "mood slime" outbreak of 1989, harnessing the power of positive energy to defeat the tyrannical Vigo the Carpathian. From managing subterranean rivers of ooze to battling giant marshmallow men, our experience is unmatched, and we remain ready to believe you.</p>
                 </div>
             </div>
         </div>
