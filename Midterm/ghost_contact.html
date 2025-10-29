@@ -153,7 +153,7 @@ window.onload = function() {
     {
         //requests a redo sumbission
         //alert("Please sumbit complete and proper information so we may reach you. Thanks!");
-        jsonText.innerHTML = "Please sumbit complete and proper information so we may reach you. Thanks";
+        jsonText.innerHTML = "All starred questions are required. Thank you!";
         console.log("incorrect submission");
     } else {
         //stores proper sumbission in array
@@ -246,22 +246,22 @@ window.onload = function() {
     <h3 style="text-align:center; color:whitesmoke; line-height:20px !important ">Contact Info:</h3>
    <div class="flex-containerOptions">
         <div>
-            <label style="color:whitesmoke">First Name:</label>
+            <label style="color:whitesmoke">First Name: *</label>
             <br>
             <input id="firstname" type="text" style=" border: 2px solid black; background-color: rgba(250, 235, 215, 0.199);">
         </div>
         <div>
-            <label style="color:whitesmoke">Last Name:</label>
+            <label style="color:whitesmoke">Last Name: *</label>
             <br>
             <input id="lastname" type="text" style=" border: 2px solid black; background-color: rgba(250, 235, 215, 0.199);">
         </div>
         <div>
-            <label style="color:whitesmoke">Phone Number:</label>
+            <label style="color:whitesmoke">Phone Number: *</label>
             <br>
             <input id="phonenum" type="text" style=" border: 2px solid black; background-color: rgba(250, 235, 215, 0.199);">
         </div>
         <div>
-            <label style="color:whitesmoke">Email Address:</label>
+            <label style="color:whitesmoke">Email Address: *</label>
             <br>
             <input id="email" type="text" style=" border: 2px solid black; background-color: rgba(250, 235, 215, 0.199);">
             <br>
@@ -269,7 +269,7 @@ window.onload = function() {
     </div>
 
     <div class="option-container" style="color: whitesmoke;">
-        <h3 style="color: whitesmoke;">Duration of Haunting:</h3>
+        <h3 style="color: whitesmoke;">Duration of Haunting: *</h3>
         <div class="option-list">
             <label><input type="radio" name="haunt-length" value="1week">1-2 Weeks</label>
             <label><input type="radio" name="haunt-length" value="2week">2-4 Weeks</label>
@@ -289,7 +289,7 @@ window.onload = function() {
         </div>
     </div>
 
-    <h2 style="color:whitesmoke; margin-bottom:5px !important">Description: </h2> 
+    <h2 style="color:whitesmoke; margin-bottom:5px !important">Description: *</h2> 
     <label style="color:whitesmoke"> 
         Please include any other information relating to your hauntings.<br> 
     </label>
