@@ -77,6 +77,16 @@
             display: block;
             width: 100%
         }
+
+        .flex-containertopBlurb h2 {
+            display: block;
+            width: 100%;
+            color: #249528;
+            text-align: center;
+            font-size: 40px;
+            z-index: 10;
+            position: relative;
+        }
         
     </style>
 </head>
@@ -134,12 +144,13 @@
 
   <div id="details-box" class="details-box"></div>
 
-  <div class="flex-containertopBlurb" style="margin-top:40px; margin-left:200px; margin-right:200px; margin-bottom:100px; color: whitesmoke; text-align:center;">
-    <h1>Book your service now! </h1>
-    <a type="button" class="btn" href="ghost_contact.html" style="text-align: center; background-color: #20233100; margin-bottom: 50px;">
-      <input type="button" class = "btn"  value = "Click Here" style="display: inline-block;">
-    </a>
-  </div>
+    <div class="flex-containertopBlurb" style="display: block; margin: 0 auto; margin-bottom: 20px; width: 70%; color: whitesmoke; text-align:center;">
+        <h2>Book your service now!</h2>
+
+        <a type="button" class="btn" href="ghost_contact.html" style="text-align: center; background-color: #20233100; margin-bottom: 50px;">
+            <input type="button" class="btn" value="Click Here" style="display: inline-block;">
+        </a>
+    </div>
 
   <!-- Order Now Button -->
     <a href="ghost_contact.html" class="order-now">Order Now!</a>
