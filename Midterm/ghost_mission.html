@@ -4,6 +4,17 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
+    <script>
+        window.onload = function() {
+        const dropdownLogo = document.querySelector(".header-logo2 img");
+        const dropdownMenu = document.querySelector(".navdropdown ul");
+
+        dropdownLogo.addEventListener("click", () => {
+            dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+    };
+    </script>
     <title>Ghostbusters Mission</title>
     <link rel="stylesheet" type="text/css" href="ghost_style.css">
     <meta charset="UTF-8">
@@ -136,6 +147,7 @@
 </head>
 <body style="background-color: #202331;">
 
+    <!-- HEADER -->
     <header>
         <div class="header-logo">
             <a href = "ghost_home.html">
@@ -149,16 +161,32 @@
             <p>Who you gonna call?</p>
             <p class="phone-number">(555) 236-8888</p>
         </div>
+        <div class="header-logo2">
+        <div class="navdropdown">
+          <img src="bin/logo.png" alt="Ghostbusters Logo" ALIGN="top"> 
+          
+            <ul>
+            <li><a href='ghost_home.html'>Home</a></li>
+            <li><a href='ghost_services.html'>Services</a></li>
+            <li><a href='ghost_mission.html'class="active">Our Mission</a></li>
+            <li><a href='ghost_team.html' >Our Team</a></li>
+            <li><a href='ghost_testimonials.html'>Testimonials</a></li>
+            <li><a href='ghost_contact.html' >Contact</a></li>
+            <li><a href='ghost_locations.html'>Locations</a></li>
+            
+            </ul>
+        </div> <!-- end nav dropdown -->
+        </div>
     </header>
 
     <nav>
         <ul>
             <li><a href='ghost_home.html'>Home</a></li>
             <li><a href='ghost_services.html'>Services</a></li>
-            <li><a href='ghost_mission.html' class="active">Our Mission</a></li>
-            <li><a href='ghost_team.html'>Our Team</a></li>
+            <li><a href='ghost_mission.html'class="active">Our Mission</a></li>
+            <li><a href='ghost_team.html' >Our Team</a></li>
             <li><a href='ghost_testimonials.html'>Testimonials</a></li>
-            <li><a href='ghost_contact.html'>Contact</a></li>
+            <li><a href='ghost_contact.html' >Contact</a></li>
             <li><a href='ghost_locations.html'>Locations</a></li>
             
             </ul>
