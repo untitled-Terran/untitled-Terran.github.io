@@ -14,9 +14,29 @@
             text-align: center;
         }
 
+        /* Background Image */
+        .back-img {
+            width: 100%;
+            overflow: hidden;
+            opacity: 0.7;
+            z-index: 1;
+            margin-top: -110px;
+            position: absolute;
+        }
+
+        .back-img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            z-index: 0;
+        }
+
         /* Boxes */
         #boxes {
-            padding-bottom: 60px;
+            padding-bottom: 30px;
+            z-index: 10;
+            position: relative;
         }
 
         .box {
@@ -31,12 +51,14 @@
             margin: 30px auto;
             text-align: center;
             overflow: hidden;
+            z-index: 1000;
         }
 
         .box img {
             width: 25%;
             border-radius: 10px;
             object-fit: cover;
+            z-index: 999;
         }
 
         .box.right-img {
@@ -60,6 +82,8 @@
         .box-text {
             width: 55%;
             padding: 0 20px;
+            z-index: 999;
+            display: block;
         }
 
         .box-text h2 {
@@ -73,7 +97,7 @@
 
         .box-btn {
             display: inline-block;
-            background-color: #12111c;
+            background-color: #000;
             color: #85f1a2;
             padding: 10px 20px;
             border-radius: 8px;
@@ -98,6 +122,13 @@
             padding-left: 30px;
         }
 
+        h1 {
+            display: inline-block;
+            width: 160px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
         @media (max-width: 1150px) {
             .box img {
                 float: none;
@@ -108,6 +139,10 @@
 
             .box-text {
                 width: 95%;
+            }
+
+            h1 {
+                background-color: #24293e;
             }
         }
 
@@ -143,7 +178,11 @@
     </nav>
 
     <!-- Title -->
-    <h1 style="display: block; width: 100%; text-align: center; font-size: 40px; color: #50a539;">Home</h1>
+    <h1>Home</h1>
+
+    <div class="back-img">
+        <img src="bin/teamwork.png">
+    </div>
    
     <!-- Info boxes -->
     <div id="boxes">
@@ -167,7 +206,7 @@
                     <li>- Trapping slippery ghosts</li>
                     <li>- Weakening ghosts with proton streams</li>
                 </ul>
-                <a href="ghost_mission.html" class="box-btn">Learn More Here!</a>
+                <a href="ghost_services.html" class="box-btn">Learn More Here!</a>
             </div>
         </div>
 
@@ -181,7 +220,9 @@
         </div>
     </div>
 
-    
+    <!-- Order Now Button -->
+    <a href="ghost_contact.html" class="order-now">Order Now!</a>
+
     <!-- Footer -->
     <footer>
         <div class="footer-left">

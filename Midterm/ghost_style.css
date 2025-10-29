@@ -3,6 +3,16 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; 
+    /* text-align: center; */
+}
+
+h1 {
+    color: #249528;
+    width: 250px;
+    text-align: center;
+    font-size: 40px;
+    z-index: 10;
+    position: relative;
 }
 
 header {
@@ -42,7 +52,7 @@ header {
 .header-contact .phone-number {
     font-size: 22px;
     font-weight: bold;
-    color: #fff;
+    color: #fff !important;
 }
 
 /* When screen size is too small, changes layout to top-to-bottom */
@@ -237,4 +247,16 @@ footer {
         font-size: 16px;
         margin-top: 10px;
     }
+}
+
+.order-now {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    background-color: #000000;
+    color: #85f1a2;
+    padding: 15px 25px;
+    text-decoration: none;
+    z-index: 9999;
+    border-radius: 10px;
 }
